@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+<!--  Базавая страница  -->
+  <definition name="homepage" template="/WEB-INF/views/layouts/basepage.jsp">
+    <put-attribute name="title" value="Магазин ювелирных изделий" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/content.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+
+<!-- Страница каталога  -->
+  <definition name="catalogpage" extends="homepage" >
+    <put-attribute name="title" value="Каталог товаров" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/catalog.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница логина  -->
+  <definition name="loginpage" extends="homepage" >
+    <put-attribute name="title" value="Аторизируйтесь" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/login.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+
+<!--   Страница регистрации  -->
+  <definition name="signUpspage" extends="homepage" >
+    <put-attribute name="title" value="Регистрация" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/signup.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Ошибка 403 -->
+  <definition name="error403page" extends="homepage" >
+    <put-attribute name="title" value="Ошибка 403 Доступ запрещен" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/403error.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница доставки -->
+  <definition name="deliveryANDpaymentpage" extends="homepage" >
+    <put-attribute name="title" value="Доставка и оплата товаров" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/deliveryANDpayment.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница Контакты -->
+  <definition name="contactUspage" extends="homepage" >
+    <put-attribute name="title" value="Информация о нас" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/contactUs.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница детальной информации продукта -->
+  <definition name="detailspage" extends="homepage" >
+    <put-attribute name="title" value="Страница информации" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/details.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница добавления нового товара -->
+  <definition name="addNewProductpage" extends="homepage" >
+    <put-attribute name="title" value="Добавление нового товара" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/addNewProduct.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Страница обновления товара -->
+  <definition name="updateProductpage" extends="homepage" >
+    <put-attribute name="title" value="Обновление товара" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/updateExistingProduct.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--   Корзина -->
+  <definition name="cartpage" extends="homepage" >
+    <put-attribute name="title" value="Корзина покупателя" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="/WEB-INF/views/templateHeader/advertisement.jsp" />
+    <put-attribute name="menu" type="template" value="/WEB-INF/views/templateHeader/menu_horizontal.jsp" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateContent/cart.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--  Checkout -->
+  <definition name="checkoutpage" extends="homepage" >
+    <put-attribute name="title" value="Новый покупатель | Оформление заказа" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateCheckOut/checkoutpage.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--  Checkout second page-->
+  <definition name="checkoutsecondpage" extends="homepage" >
+    <put-attribute name="title" value="Новый покупатель | Оформление заказа" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateCheckOut/checkoutsecondpage.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--  Order confirming page-->
+  <definition name="orderConfirming" extends="homepage" >
+    <put-attribute name="title" value="Новый покупатель | Оформление заказа" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateCheckOut/orderConfirming.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>
+  
+<!--  Thank you page-->
+  <definition name="thanksForOrder" extends="homepage" >
+    <put-attribute name="title" value="Спасибо за Ваш заказ!" />
+    <put-attribute name="navbar" type="template" value="/WEB-INF/views/templateHeader/navbar.jsp" />
+    <put-attribute name="advertisement" type="template" value="" />
+    <put-attribute name="menu" type="template" value="" />
+    <put-attribute name="body" type="template" value="/WEB-INF/views/templateCheckOut/thanksForOrder.jsp" />
+    <put-attribute name="footer" type="template" value="/WEB-INF/views/templateFooter/footer.jsp" />
+  </definition>  
+  
+
+</tiles-definitions>

@@ -1,0 +1,179 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"> 
+<style>
+	body { 
+		font-family: 'Roboto', sans-serif; 
+		font-size: 48px;
+		padding: 0;
+		margin: 0; 
+  } 
+</style> 
+</head> 
+<body> 
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="640px" style="border-collapse: collapse;"> 
+	<tbody> 
+		<td style="width:640px;vertical-align:top"> 
+			<table cellpadding="0" cellspacing="0" style="border-left:1px solid #cccccc; border-right:1px solid #cccccc; border-top:3px solid #74d46b; border-collapse: collapse; width: 100%"> 
+				<tbody> 
+					<tr> 
+						<td style="padding:25px 30px 32px 27px;vertical-align:top;border-bottom:1px solid #cccccc"> 
+							<h1 style="font-size:28px;line-height:32px;padding-bottom:15px;font-weight:normal;margin:0"> $order.customer.userFirstName $order.customer.userLastName, спасибо за ваш заказ!</h1> 
+							<p style="font-size:15px;padding-bottom:22px;line-height:24px;margin:0">Ваша заявка принята.</p> 
+							<p style="font-size:15px; line-height: 24px; margin:0">Вы можете отследить статус своего заказа в <a href="#" style="text-decoration:none;color:#3e77aa">личном кабинете</a>.</p> 
+						</td> 
+					</tr> 
+					<tr> 
+						<td style="vertical-align:top"> 
+							<table cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #cccccc;border-collapse: collapse; width: 100%"> 
+								<tbody> 
+									<tr> 
+										<td style="padding:0 30px 0 27px; vertical-align: top"> 
+											<table cellpadding="0" cellspacing="0" style="border: 0; border-collapse: collapse; line-height: 24px; width: 580px"> 
+												<tbody> 
+													<tr> 
+														<td colspan="2" style="vertical-align: baseline"> 
+															<h2 style="font-size:26px; margin:0; font-weight:normal; padding:20px 0 10px 0">Заказ № $order.orderId</h2> 
+														</td> 
+														<td style="vertical-align:baseline;text-align:right;font-size:15px">$order.orderedDate.get('dd MMMM yyyy HH:mm:ss')</td> 
+													</tr> 
+													<tr> 
+														<td style="font-size:13px;padding-bottom:5px;width:280px;vertical-align:top;color:#999999">Название и цена товара</td> 
+														<td style="font-size:13px;padding-bottom:5px;width:100px;vertical-align:top;color:#999999">Кол-во</td> 
+														<td style="font-size:13px;padding-bottom:5px;width:200px;text-align:right;vertical-align:top;color:#999999">Сумма</td> 
+													</tr>
+													#foreach($cartItem in $order.cartItems)
+													<tr> 
+														<td colspan="3" style="border-top:1px solid #f0f0f0;vertical-align:top"> 
+															<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;margin-top:10px;margin-bottom:10px;width:100%"> 
+																<tbody> 
+																	<tr> 
+																		<td align="center" style="padding-left:20px; padding-right:20px; padding-top:5px; padding-bottom:5px; width:100px; vertical-align:middle"> 
+																			<a href="#" style="text-decoration:none;line-height:0" target="_blank"> 
+																				<img src="$cartItem.product.image.link" border="0" width="93.1" height="69.8" alt="$cartItem.product.productName" style="display:block; background-color:#ffffff"> 
+																			</a> 
+																		</td> 
+																		<td style="padding-top:5px;padding-bottom:5px;vertical-align:top"> 
+																			<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;width:100%"> 
+																				<tbody> 
+																					<tr> 
+																						<td colspan="3" style="padding:0 0 3px 0;line-height:20px"> 
+																							<a href="#"> $cartItem.product.productName</a><span style="white-space:nowrap;font-size:12px;color:#999999;padding-left:10px">№ $cartItem.product.productArticleId</span> 
+																						</td> 
+																					</tr> 
+																					<tr> 
+																						<td style="font-size:15px;width:140px;vertical-align:top;padding-top:5px">$cartItem.product.productPrice грн</td> 
+																						<td style="font-size:15px;width:100px;vertical-align:top;padding-top:5px">$cartItem.quantity шт. </td> 
+																						<td style="font-size:18px;width:200px;vertical-align:top;text-align:right;color:#333333;padding-top:5px">  $cartItem.totalPrice грн</td> 
+																					</tr> 
+																				</tbody> 
+																			</table> 
+																		</td> 
+																	</tr> 
+																</tbody> 
+															</table>															 
+														</td> 
+													</tr>
+													#end
+													<tr> 
+														<td colspan="3" style="border-top:1px solid #f0f0f0;padding-top:17px;padding-bottom:17px"> 
+															<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;width:100%"> 
+																<tbody> 
+																	<tr> 
+																		<td style="width:140px;vertical-align:top;padding:0">Доставка</td> 
+																		<td style="width:260px;vertical-align:top;padding:0"> $order.orderDeliveryType
+																			<table cellpadding="0" cellspacing="0" style="border:0;padding:0;margin:0;border-collapse:collapse;width:100%"> 
+																				<tbody> 
+																					<tr> 
+																						<td style="vertical-align:top;font-size:13px;color:#999999;line-height:20px"> 
+																							<a style="color:#3e77aa; text-decoration:none" href="#"> 
+																							$order.orderSettlement, $order.orderWarehouse 
+																							</a> 
+																							<p style="margin:0;padding:0;font-size:13px;line-height:20px">0-800-500-609</p> 
+																						</td> 
+																					</tr> 
+																				</tbody> 
+																			</table> 
+																		</td> 
+																		<td style="width:180px;text-align:right;vertical-align:top;padding:0"> 
+																			<span style="font-size:18px">35 грн</span> 
+																		</td> 
+																	</tr> 
+																	<tr> 
+																		<td colspan="3" style="font-size:13px;padding:10px 30px 5px 30px;vertical-align:top;width:190px;text-align:justify"> 
+																			<div style="border:1px solid #e3e3e3;padding:15px;line-height:21px"> 
+																				<p>По прибытию заказа в пункт выдачи, Вы получите уведомление от курьерской службы. В течение 5-ти рабочих дней отделения (кроме воскресенья, нерабочих и праздничных дней) с учетом дня поступления отправления в отделение Получателя. За хранение с 6-го рабочего дня (кроме воскресенья, нерабочих и праздничных дней), начисляется доплата. Стоимость зависит от срока хранения. Пожалуйста, обратите внимание, что получить товар, в отделении «Нова пошта», может только тот клиент, на кого оформлен заказ. Поэтому, при получении заказа обязательно нужно иметь при себе паспорт. При получении обязательно проверяйте целостность товара.</p> 
+																			</div> 
+																		</td> 
+																	</tr> 
+																</tbody> 
+															</table> 
+														</td> 
+													</tr> 
+													<tr> 
+														<td colspan="3" style="border-top:1px solid #f0f0f0;padding-top:17px;padding-bottom:17px"> 
+															<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;width:100%"> 
+																<tbody> 
+																	<tr> 
+																		<td style="font-size:15px;vertical-align:top;width:140px">Оплата</td> 
+																		<td style="font-size:15px;vertical-align:top">$order.payment.paymentName</td> 
+																	</tr> 
+																</tbody> 
+															</table> 
+														</td> 
+													</tr>																						 
+													<tr> 
+														<td colspan="3" style="border-top:1px solid #f0f0f0;padding-top:17px;padding-bottom:17px"> 
+															<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;width:100%"> 
+																<tbody> 
+																	<tr> 
+																		<td style="font-size:15px;vertical-align:top;width:140px">Покупатель</td> 
+																		<td style="font-size:15px;vertical-align:top"> $order.customer.userFirstName $order.customer.userLastName, <a href="tel:+380%2066%20470%207274" value="380664707274">+38$order.customer.userPhoneNumber</a></td> 
+																	</tr> 
+																</tbody> 
+															</table> 
+														</td> 
+													</tr> 
+													<tr> 
+														<td colspan="3" style="border-top:1px solid #f0f0f0;padding-top:17px;padding-bottom:17px"> 
+															<table cellpadding="0" cellspacing="0" style="border:0;border-collapse:collapse;width:100%"> 
+																<tbody> 
+																	<tr> 
+																		<td style="vertical-align:middle;width:140px">Продавец</td> 
+																		<td style="font-size:20px; vertical-align:middle"> 
+																			<img src="https://i.imgur.com/E4T5IoL.png" title="source: imgur.com" width="29.41176" height="26.470588" style="display:block; background-color:#ffffff" alt="Жемчижинка" title="Жемчужинка"/><h4>Жемчужинка</h4>
+																		</td> 
+																	</tr> 
+																</tbody> 
+															</table> 
+														</td> 
+													</tr> 
+													<tr> 
+														<td colspan="3" style="border-top: 1px solid #f0f0f0; padding-top: 22px; padding-bottom: 22px"> 
+															<table cellpadding="0" cellspacing="0" style="border: 0; border-collapse: collapse; width: 100%"> 
+																<tbody> 
+																	<tr> 
+																		<td style="font-size: 18px; vertical-align: baseline">Итого к оплате</td> 
+																		<td style="font-size: 26px; text-align: right; vertical-align: baseline">  $order.cart.grandTotal грн</td> 
+																	</tr> 
+																</tbody> 
+															</table> 
+														</td> 
+													</tr> 
+												</tbody> 
+											</table> 
+										</td> 
+									</tr> 
+								</tbody> 
+							</table> 
+						</td> 
+					</tr> 
+				</tbody> 
+			</table> 
+		</td> 
+	</tbody> 
+</table> 
+</body>  
+</html>
